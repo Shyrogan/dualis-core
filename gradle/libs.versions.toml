@@ -1,0 +1,12 @@
+[versions]
+java = "18"
+kotlin = "1.7.10"
+sponge = "9.0.0"
+indra = "2.1.1"
+
+[plugins]
+indra-sonatype = { id = "net.kyori.indra.publishing.sonatype", version.ref = "indra" }
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
+[libraries]
+sponge-api = { module = "org.spongepowered:spongeapi", version.ref = "sponge" }
