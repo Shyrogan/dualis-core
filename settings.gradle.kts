@@ -29,7 +29,7 @@ dependencyResolutionManagement {
 }
 
 include(
-    "adventure",
+    // "adventure", - Moved to https://github.com/DualisGames/adventure-dsl
     "sponge-api",
     "exposed",
     "dependency-injection"
