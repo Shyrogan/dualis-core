@@ -38,7 +38,7 @@ class KCommandRegistration(
 /**
  * A DSL syntax to register commands.
  */
-inline fun PluginContainer.registerCommands(crossinline block: KCommandRegistration.() -> Unit) =
-    listener<RegisterCommandEvent<Command.Parameterized>> {
-        block(KCommandRegistration(this, this@registerCommands))
+inline fun commands(container: PluginContainer, crossinline block: KCommandRegistration.() -> Unit) =
+    container.listener<RegisterCommandEvent<Command.Parameterized>> {
+        block(KCommandRegistration(this, container))
     }
