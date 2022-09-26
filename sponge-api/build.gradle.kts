@@ -22,5 +22,5 @@ plugins {
 
 dependencies {
     api(libs.configurate.extra.kotlin)
-    api(projects.adventure)
+    api(libs.adventure.dsl)
 }
