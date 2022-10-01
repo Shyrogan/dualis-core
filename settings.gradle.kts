@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-rootProject.name = "sponge-dsl"
+rootProject.name = "dualis-core"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
@@ -41,16 +41,14 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
     repositories {
         mavenCentral()
         mavenLocal()
     }
 }
 
-include(
-    // "adventure", - Moved to https://github.com/DualisGames/adventure-dsl
-    "sponge-api",
-    "exposed",
-    "dependency-injection"
-)
+sequenceOf("api", "impl").forEach {
+    include(it)
+    project(":$it").name = "${rootProject.name}-$it"
+}

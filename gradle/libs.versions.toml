@@ -2,17 +2,28 @@
 java = "18"
 kotlin = "1.7.10"
 sponge = "9.0.0"
+sponge-gradle-plugin = "2.0.2"
 indra = "2.1.1"
+sponge-dsl = "0.1.0"
 koin = "3.2.1"
-configurate = "4.1.2"
-adventure-dsl = "0.1.0"
+hikari-cp = "5.0.1"
+postgresql = "42.5.0"
+shadow = "7.0.0"
+jedis = "4.2.0"
 
 [plugins]
 indra-sonatype = { id = "net.kyori.indra.publishing.sonatype", version.ref = "indra" }
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+sponge-gradle = { id = "org.spongepowered.gradle.plugin", version.ref = "sponge-gradle-plugin" }
+shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow" }
 
 [libraries]
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 sponge-api = { module = "org.spongepowered:spongeapi", version.ref = "sponge" }
+adventure-dsl = { module = "games.dualis:adventure-dsl", version.ref = "sponge-dsl" }
+sponge-dsl-api = { module = "games.dualis:sponge-dsl-api", version.ref = "sponge-dsl" }
+sponge-dsl-di = { module = "games.dualis:sponge-dsl-di", version.ref = "sponge-dsl" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
-configurate-extra-kotlin = { module = "org.spongepowered:configurate-extra-kotlin", version.ref = "configurate" }
-adventure-dsl = { module = "games.dualis:adventure-dsl", version.ref = "adventure-dsl" }
+hikari = { module = "com.zaxxer:HikariCP", version.ref = "hikari-cp" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+jedis = { module = "redis.clients:jedis", version.ref = "jedis" }
